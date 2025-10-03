@@ -14,7 +14,7 @@ import androidx.compose.material3.TopAppBar
 fun HomeScreen() {
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Mi app kotlin")})
+            TopAppBar(title = { Text("Mi App Kotlin")})
         }
     ) { innerPadding ->
         Column(
@@ -23,9 +23,9 @@ fun HomeScreen() {
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
-            Text(text = "bienvenido")
-            Button(onClick = { /* acction futere */}) {
-                Text("Presoname")
+            Text(text = "Bienvenido")
+            Button(onClick = { /* Acción futura */}) {
+                Text("Presióname")
             }
             /*
             Image(
