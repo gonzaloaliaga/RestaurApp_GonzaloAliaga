@@ -1,13 +1,10 @@
-package com.example.restaurapp_gonzaloaliaga.ui.theme
+package com.example.restaurapp_gonzaloaliaga.ui
 import com.example.restaurapp_gonzaloaliaga.R
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.BottomAppBar
-import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -19,11 +16,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.text.font.FontFamily
 
 @Preview(showBackground = true)
 @Composable
@@ -53,7 +47,7 @@ fun HomeScreen() {
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
                 contentColor = MaterialTheme.colorScheme.primary,
             ) {
-            /* Botón Home, Menú, Reservar, Perfil
+                /* Botón Home, Menú, Reservar, Perfil
                 Button(
                     onClick =
                 ) {
@@ -82,7 +76,8 @@ fun HomeScreen() {
                 val scrollState = rememberScrollState()
                 val items = listOf("Item 1", "Item 2", "Item 3", "Item 4") // Obtener productos
 
-                Row(modifier = Modifier
+                Row(
+                    modifier = Modifier
                         .horizontalScroll(scrollState)
                 ) {
                     for (item in items) {
