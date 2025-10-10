@@ -16,8 +16,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.restaurapp_gonzaloaliaga.viewmodel.UsuarioViewModel
 
 @Preview(showBackground = true)
 @Composable
@@ -27,7 +31,8 @@ fun HomeScreenPreview() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(viewModel: UsuarioViewModel) {
+    val estado by viewModel.estado.collectAsState()
     Scaffold(
         // Header
         topBar = {

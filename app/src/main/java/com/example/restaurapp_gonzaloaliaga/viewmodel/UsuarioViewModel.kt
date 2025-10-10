@@ -1,8 +1,11 @@
-package com.example.restaurapp_gonzaloaliaga.model
+package com.example.restaurapp_gonzaloaliaga.viewmodel
+
 import androidx.lifecycle.ViewModel
+import com.example.restaurapp_gonzaloaliaga.model.UsuarioErrores
+import com.example.restaurapp_gonzaloaliaga.model.UsuarioUIState
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.flow.MutableStateFlow
 
 class UsuarioViewModel : ViewModel() {
 
@@ -30,8 +33,8 @@ class UsuarioViewModel : ViewModel() {
         val estadoActual = _estado.value
         val errores = UsuarioErrores(
             nombre = if (estadoActual.nombre.isBlank()) "Campo obligatorio" else null,
-            correo = if(!estadoActual.correo.contains("@")) "Correo inválido" else null,
-            clave = if(estadoActual.clave.length < 6) "Debe tener al menos 6 caracteres" else null
+            correo = if (!estadoActual.correo.contains("@")) "Correo inválido" else null,
+            clave = if (estadoActual.clave.length < 6) "Debe tener al menos 6 caracteres" else null
         )
 
         val hayErrores = listOfNotNull(
